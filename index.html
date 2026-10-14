@@ -168,5 +168,46 @@ h2 {
 
 </section>
 
+<!-- Wedding Music Button -->
+<style>
+  #musicBtn {
+    position: fixed;
+    bottom: 22px;
+    right: 20px;
+    z-index: 9999;
+    background: #8b1e3f;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 18px;
+    font-size: 16px;
+  }
+</style>
+
+<button id="musicBtn">🎵 Play Wedding Song</button>
+
+<audio id="weddingSong" preload="none">
+  <source src="YOUR_DIRECT_AUDIO_URL.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const btn = document.getElementById("musicBtn");
+  const song = document.getElementById("weddingSong");
+
+  btn.addEventListener("click", async () => {
+    try {
+      if (song.paused) {
+        await song.play();
+        btn.textContent = "⏸ Pause Wedding Song";
+      } else {
+        song.pause();
+        btn.textContent = "🎵 Play Wedding Song";
+      }
+    } catch (e) {
+      alert("Song link check karein.");
+    }
+  });
+</script>
+
 </body>
 </html>
