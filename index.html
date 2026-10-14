@@ -187,5 +187,187 @@ h2 {
 </div>
   
 
+<!-- Royal Floral Wedding Welcome Cover -->
+<style>
+  #welcomeCover {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 16px;
+    background:
+      radial-gradient(ellipse at 50% 35%,
+        rgba(255,255,255,.96), transparent 65%),
+      linear-gradient(180deg, #f8e6df, #fff5e9, #f5dfd4);
+  }
+
+  .royal-card {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 480px;
+    min-height: 90vh;
+    padding: 55px 18px 35px;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid #d7b58d;
+    border-radius: 180px 180px 12px 12px;
+    background: rgba(255, 250, 241, .72);
+    box-shadow: 0 8px 35px #9e657025;
+  }
+
+  .royal-card::before,
+  .royal-card::after {
+    position: absolute;
+    top: 0;
+    font-size: 48px;
+    line-height: 1.5;
+    opacity: .85;
+    pointer-events: none;
+  }
+
+  .royal-card::before {
+    content: "🌿🌸";
+    left: 0;
+  }
+
+  .royal-card::after {
+    content: "🌸🌿";
+    right: 0;
+  }
+
+  .royal-lanterns {
+    margin: 8px 0 35px;
+    color: #b28a50;
+    font-size: 25px;
+  }
+
+  .royal-blessing {
+    color: #873c53;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    margin-bottom: 28px;
+  }
+
+  .royal-intro {
+    color: #77584f;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.9;
+  }
+
+  .royal-name {
+    color: #cb326c;
+    font-family: "Brush Script MT", cursive;
+    font-style: italic;
+    font-size: clamp(48px, 12vw, 66px);
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 12px 0;
+  }
+
+  .royal-and {
+    color: #b68b59;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    margin: 4px 0;
+  }
+
+  .royal-ornament {
+    color: #bd925d;
+    font-size: 25px;
+    margin: 15px 0;
+  }
+
+  .royal-date {
+    color: #873c53;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 24px 0;
+  }
+
+  #openInvite {
+    background: #85364d;
+    color: white;
+    border: 1px solid #d9b37f;
+    border-radius: 30px;
+    padding: 14px 26px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #85364d30;
+  }
+
+  .royal-footer {
+    margin-top: 20px;
+    color: #94694e;
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 14px;
+  }
+
+  .royal-garden {
+    margin-top: 28px;
+    font-size: 29px;
+  }
+</style>
+
+<div id="welcomeCover">
+  <div class="royal-card">
+
+    <div class="royal-lanterns">🏮 ✨ 🏮</div>
+
+    <div class="royal-blessing">
+      ॥ श्री गणेशाय नमः ॥
+    </div>
+
+    <p class="royal-intro">
+      With the blessings of our elders,<br>
+      we cordially invite you to celebrate<br>
+      the wedding of
+    </p>
+
+    <h1 class="royal-name">Pooja</h1>
+
+    <div class="royal-ornament">🌸 ❦ 🌸</div>
+
+    <div class="royal-and">with</div>
+
+    <h1 class="royal-name">Shubham</h1>
+
+    <div class="royal-ornament">❦ ♡ ❦</div>
+
+    <div class="royal-date">
+      <strong>WEDDING CELEBRATION</strong><br>
+      26 – 27 November 2026<br>
+      With love, joy and blessings
+    </div>
+
+    <button id="openInvite" type="button">
+      💌 Open Invitation
+    </button>
+
+    <div class="royal-footer">
+      Two hearts · One beautiful beginning
+    </div>
+
+    <div class="royal-garden">
+      🌷 🪷 🌸 🪷 🌷
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById("openInvite")
+    .addEventListener("click", function () {
+      document.getElementById("welcomeCover").remove();
+      window.scrollTo(0, 0);
+    });
+</script>
+
 </body>
 </html>
