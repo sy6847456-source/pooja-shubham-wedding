@@ -362,11 +362,15 @@ h2 {
 </div>
 
 <script>
-  document.getElementById("openInvite")
-    .addEventListener("click", function () {
-      document.getElementById("welcomeCover").remove();
-      window.scrollTo(0, 0);
-    });
+  
+document.getElementById("openInvite")
+  .addEventListener("click", function () {
+    const countdown = document.getElementById("countdown");
+    countdown.style.display = "block";
+    countdown.scrollTop = 0;
+    countdown.scrollIntoView({ behavior: "smooth" });
+  });
+
 </script>
 
 <!-- ROYAL WEDDING COUNTDOWN -->
