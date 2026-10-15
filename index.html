@@ -361,17 +361,21 @@ h2 {
   </div>
 </div>
 
-<script>
-  
-document.getElementById("openInvite")
-  .addEventListener("click", function () {
-    const countdown = document.getElementById("countdown");
-    countdown.style.display = "block";
-    countdown.scrollTop = 0;
-    countdown.scrollIntoView({ behavior: "smooth" });
-  });
 
+<script>
+window.addEventListener("load", function () {
+  const button = document.getElementById("openInvite");
+  const countdown = document.getElementById("countdown");
+
+  if (button && countdown) {
+    button.addEventListener("click", function () {
+      countdown.style.display = "block";
+      countdown.scrollIntoView({ behavior: "smooth" });
+    });
+  }
+});
 </script>
+
 
 <!-- ROYAL WEDDING COUNTDOWN -->
 <section id="countdown" class="royal-countdown">
