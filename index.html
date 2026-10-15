@@ -369,5 +369,134 @@ h2 {
     });
 </script>
 
+<!-- ROYAL WEDDING COUNTDOWN -->
+<section id="countdown" class="royal-countdown">
+  <div class="royal-card">
+    <div class="royal-flower">✦ ❋ ✦</div>
+    <p class="royal-small">THE WEDDING CELEBRATION</p>
+    <h2>Sweta <span>&</span> Gaurav</h2>
+    <div class="royal-line"></div>
+    <p class="royal-date">27 November 2026</p>
+    <p class="royal-message">Two hearts · One beautiful beginning</p>
+
+    <div class="timer-grid">
+      <div><strong id="days">00</strong><small>Days</small></div>
+      <div><strong id="hours">00</strong><small>Hours</small></div>
+      <div><strong id="minutes">00</strong><small>Minutes</small></div>
+      <div><strong id="seconds">00</strong><small>Seconds</small></div>
+    </div>
+
+    <p id="countdown-note">Counting down to our forever ✨</p>
+  </div>
+</section>
+
+<style>
+.royal-countdown {
+  padding: 45px 16px;
+  background: #f8eee4;
+  text-align: center;
+  font-family: Georgia, serif;
+}
+.royal-card {
+  max-width: 500px;
+  margin: auto;
+  padding: 35px 18px;
+  border: 2px solid #c5a15b;
+  border-radius: 180px 180px 24px 24px;
+  background: #fff9ef;
+  box-shadow: 0 8px 28px #6b233322;
+  color: #70283e;
+}
+.royal-flower {
+  color: #b28a43;
+  font-size: 30px;
+}
+.royal-small {
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+.royal-card h2 {
+  font-size: 34px;
+  margin: 15px 0;
+}
+.royal-card h2 span {
+  color: #b28a43;
+}
+.royal-line {
+  width: 100px;
+  height: 2px;
+  margin: 20px auto;
+  background: #c5a15b;
+}
+.royal-date {
+  font-size: 22px;
+}
+.royal-message {
+  font-style: italic;
+  color: #94764a;
+}
+.timer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+}
+.timer-grid div {
+  padding: 18px 5px;
+  border: 1px solid #c5a15b;
+  border-radius: 12px;
+  background: #70283e;
+  color: #fff5df;
+}
+.timer-grid strong {
+  display: block;
+  font-size: 32px;
+}
+.timer-grid small {
+  display: block;
+  margin-top: 6px;
+  letter-spacing: 1px;
+}
+#countdown-note {
+  margin-top: 24px;
+  font-style: italic;
+}
+</style>
+
+<script>
+(function () {
+  const weddingDate =
+    new Date("2026-11-27T00:00:00+05:30").getTime();
+
+  function updateCountdown() {
+    let remaining = weddingDate - Date.now();
+
+    if (remaining <= 0) {
+      ["days", "hours", "minutes", "seconds"].forEach(
+        id => document.getElementById(id).textContent = "00"
+      );
+      document.getElementById("countdown-note").textContent =
+        "The wedding day is here! ❤️";
+      return;
+    }
+
+    const values = {
+      days: Math.floor(remaining / 86400000),
+      hours: Math.floor((remaining % 86400000) / 3600000),
+      minutes: Math.floor((remaining % 3600000) / 60000),
+      seconds: Math.floor((remaining % 60000) / 1000)
+    };
+
+    Object.keys(values).forEach(id => {
+      document.getElementById(id).textContent =
+        String(values[id]).padStart(2, "0");
+    });
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+})();
+</script>
+  
 </body>
 </html>
